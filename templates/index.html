@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Flask Uygulama</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+
+		header {
+			background-color: #0187ff;
+			text-align: center;
+			color: #ffffff;
+			padding: 30px;
+		}
+
+		nav {
+			background-color: #0055aa;
+			color: #ffffff;
+			text-align: center;
+			padding: 5px 15px;
+		}
+
+		a {
+			color: #ffffff;
+			text-decoration: none;
+		}
+
+		li {
+			display: inline;
+			padding: 5px 15px;
+		}
+
+		li:hover {
+			background-color: #0187ff;
+			border-top: 1px solid #0055aa;
+		}
+
+		section {
+			width: 80%;
+			margin: 10px auto;
+		}
+
+		div {
+			padding: 15px;
+			border: 1px solid #777;
+			color: #555;
+			border-radius: 20px;
+			margin: 10px auto;
+			transition: all 0.5s
+		}
+
+		div:hover {
+			box-shadow: 0 0 7px #777;
+			color: #333
+		}
+
+		p {
+			text-align: justify;
+			margin-top: 5px;
+		}
+
+		footer {
+			text-align: center;
+			color: #fff;
+			background-color: #333;
+			padding: 5px 0;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h2>{{ siteTitle }}</h2>
+	</header>
+	<nav>
+		<ul>
+			{% for page in pages: %}
+			<a href="#">
+				<li>{{ page }}</li>
+			</a>
+			{% endfor %}
+		</ul>
+	</nav>
+	<section>
+		{% for post in postList: %}
+		<div>
+			<h3>{{ post.title }}</h3>
+			<p>{{ post.text }}</p>
+		</div>
+		{% endfor %}
+	</section>
+	<footer>
+		{{ footer }} &copy; {{ year }}
+	</footer>
+</body>
+
+</html>
